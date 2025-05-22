@@ -1,0 +1,9 @@
+@import 'https://js.arcgis.com/4.31/@arcgis/core/assets/esri/themes/light/main.css';
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  background-color: #242424;
+}
