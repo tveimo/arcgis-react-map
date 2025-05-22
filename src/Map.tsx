@@ -70,7 +70,7 @@ type MapProps = PropsWithChildren<{
   mapId: string
 }>
 
-export const Map = ({mapId = ''}: MapProps): ReactNode | Promise<ReactNode> => {
+export const Map = ({mapId = ''}: MapProps): ReactNode => {
 
   const [loading, setLoading] = useState<boolean>(true);
   const [activeItem, setActiveItem] = useState<string>("");
