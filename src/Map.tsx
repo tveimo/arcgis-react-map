@@ -1,4 +1,4 @@
-import {type MouseEventHandler, type PropsWithChildren, type ReactNode, useState} from "react";
+import {type PropsWithChildren, type ReactNode, useState} from "react";
 
 import "@arcgis/map-components/dist/components/arcgis-map";
 import "@arcgis/map-components/dist/components/arcgis-legend";
