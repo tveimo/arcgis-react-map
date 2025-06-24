@@ -200,8 +200,12 @@ const MainMap = ({
           <div style={{ display: activeItem == 'disclaimer' ? 'block' : 'none'}} id="disclaimer-container">
             <div id="disclaimer-content">
               <div id="item-disclaimer">
-                <p>These maps are provided by ESRI.</p>
-                <p><CalciteLink target="_blank" href="https://www.esri.com/en-us/legal/overview" icon-end="launch">More information</CalciteLink>
+                <p>This is a sample mapping app implemented using the ArcGIS JavaScript SDK with React and the ESTI Calcite GUI Components.</p>
+                <p>These maps are provided by ESRI. Any public map on the ArcGIS Online portal can be loaded by providing a
+                  mapId query parameter for the portal item, eg <CalciteLink target="_blank" href="https://arcgis-react-map.netlify.app/?mapId=f2e9b762544945f390ca4ac3671cfa72" icon-end="launch">San Francisco</CalciteLink>
+                </p>
+                <p>The source code for this map is available on <CalciteLink target="_blank" href="https://github.com/tveimo/arcgis-react-map/" icon-end="launch">GitHub</CalciteLink></p>
+                <p><CalciteLink target="_blank" href="https://www.esri.com/en-us/legal/overview" icon-end="launch">ESRI Information</CalciteLink>
                 </p>
               </div>
             </div>
