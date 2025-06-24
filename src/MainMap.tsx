@@ -34,6 +34,7 @@ import Search from "@arcgis/core/widgets/Search";
 import Expand from "@arcgis/core/widgets/Expand";
 import Home from "@arcgis/core/widgets/Home";
 import Locate from "@arcgis/core/widgets/Locate";
+import Legend from "@arcgis/core/widgets/Legend";
 
 type MapProps = PropsWithChildren<{
   mapId: string
@@ -128,6 +129,15 @@ const MainMap = ({
         const locateWidget = new Locate({
           view: view,
         });
+
+        const legendWidget = new Legend({
+          view: view,
+        })
+
+        const legendExpand = new Expand({
+          view: view,
+          content: legendWidget,
+        })
         const basemapToggleWidget = new BasemapToggle({
           view: view,
           nextBasemap: "topo-vector"
@@ -148,7 +158,8 @@ const MainMap = ({
           { component: locateWidget, position: "top-left", index: 2 },
           { component: homeWidget, position: "top-left", index: 3 },
           { component: layerExpand, position: "top-left", index: 4 },
-          { component: basemapExpand, position: "top-left", index: 5 },
+          { component: legendExpand, position: "top-left", index: 5 },
+          { component: basemapExpand, position: "top-left", index: 6 },
           { component: basemapToggleWidget, position: "bottom-left", index: 0 },
         ])
       });
