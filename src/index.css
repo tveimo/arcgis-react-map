@@ -17,7 +17,7 @@
   display: flex;
 }
 
-calcite-loader {
+#calcite-loader {
   align-self: center;
   justify-self: center;
 }

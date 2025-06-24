@@ -88,6 +88,7 @@ const MainMap = ({
 
       const view = new MapView({
         map: webmap,
+        container: mapViewEl,
         ...(zoom ? { zoom: zoom } : {}),
         ...(center ? { center: center } : {}),
     });
