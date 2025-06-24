@@ -14,7 +14,6 @@
     "@arcgis/map-components-react": "^4.32.14",
     "@esri/calcite-components-react": "^3.2.0",
     "@esri/react-arcgis": "^5.2.0",
-    "esri-loader": "^3.7.0",
     "jest": "^30.0.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
