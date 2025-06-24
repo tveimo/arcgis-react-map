@@ -190,7 +190,7 @@ const MainMap = ({
             <div id="disclaimer-content">
               <div id="item-disclaimer">
                 <p>These maps are provided by ESRI.</p>
-                <p>More information in our <CalciteLink target="_blank" href="https://www.esri.com/en-us/legal/overview" icon-end="launch">More information</CalciteLink>
+                <p><CalciteLink target="_blank" href="https://www.esri.com/en-us/legal/overview" icon-end="launch">More information</CalciteLink>
                 </p>
               </div>
             </div>
