@@ -174,38 +174,45 @@ const MainMap = ({
   );
 
   return (
-
     <CalciteShell>
       <CalciteNavigation slot="header">
         <CalciteNavigationLogo id="header-title" heading-level="1" slot="logo"></CalciteNavigationLogo>
       </CalciteNavigation>
       <CalciteShellPanel slot="panel-start" position="start"
         // display-mode="float-content"
-                         collapsed={activeItem==""}>
+                         collapsed={ activeItem == "" }>
         <CalciteActionBar slot="action-bar">
           <CalciteAction data-action-id="print" icon="print" text="Print"
-                         onClick={actionToggle}></CalciteAction>
+                         onClick={ actionToggle }></CalciteAction>
           <CalciteAction data-action-id="disclaimer" icon="information" text="Disclaimer"
-                         onClick={actionToggle}></CalciteAction>
+                         onClick={ actionToggle }></CalciteAction>
         </CalciteActionBar>
 
-        <CalcitePanel heading={activeItemTitle} height-scale="l" data-panel-id="basemaps" closed={activeItem == ''}
-                      onCalcitePanelClose={elementClose}
+        <CalcitePanel heading={ activeItemTitle } height-scale="l" data-panel-id="basemaps" closed={ activeItem == '' }
+                      onCalcitePanelClose={ elementClose }
                       closable>
-          <div style={{ display: activeItem == 'legend' ? 'block' : 'none'}} id="legend-container"></div>
-          <div style={{ display: activeItem == 'print' ? 'block' : 'none'}} id="print-container">
+          <div style={ {display: activeItem == 'legend' ? 'block' : 'none'} } id="legend-container"></div>
+          <div style={ {display: activeItem == 'print' ? 'block' : 'none'} } id="print-container">
             <ArcgisPrint allowed-formats="all" allowed-layouts="all" include-default-templates="false"
                          reference-element="mapViewEl"></ArcgisPrint>
           </div>
-          <div style={{ display: activeItem == 'disclaimer' ? 'block' : 'none'}} id="disclaimer-container">
+          <div style={ {display: activeItem == 'disclaimer' ? 'block' : 'none'} } id="disclaimer-container">
             <div id="disclaimer-content">
               <div id="item-disclaimer">
-                <p>This is a sample mapping app implemented using the ArcGIS JavaScript SDK with React and the ESTI Calcite GUI Components.</p>
-                <p>These maps are provided by ESRI. Any public map on the ArcGIS Online portal can be loaded by providing a
-                  mapId query parameter for the portal item, eg <CalciteLink target="_blank" href="https://arcgis-react-map.netlify.app/?mapId=f2e9b762544945f390ca4ac3671cfa72" icon-end="launch">San Francisco</CalciteLink>
+                <p>This is a sample mapping app implemented using the ArcGIS JavaScript SDK with React and the ESTI
+                  Calcite GUI Components.</p>
+                <p>These maps are provided by ESRI. Any public map on the ArcGIS Online portal can be loaded by
+                  providing a
+                  mapId query parameter for the portal item, eg <CalciteLink target="_blank"
+                                                                             href="https://arcgis-react-map.netlify.app/?mapId=f2e9b762544945f390ca4ac3671cfa72"
+                                                                             icon-end="launch">San
+                    Francisco</CalciteLink>
                 </p>
-                <p>The source code for this map is available on <CalciteLink target="_blank" href="https://github.com/tveimo/arcgis-react-map/" icon-end="launch">GitHub</CalciteLink></p>
-                <p><CalciteLink target="_blank" href="https://www.esri.com/en-us/legal/overview" icon-end="launch">ESRI Information</CalciteLink>
+                <p>The source code for this map is available on <CalciteLink target="_blank"
+                                                                             href="https://github.com/tveimo/arcgis-react-map/"
+                                                                             icon-end="launch">GitHub</CalciteLink></p>
+                <p><CalciteLink target="_blank" href="https://www.esri.com/en-us/legal/overview" icon-end="launch">ESRI
+                  Information</CalciteLink>
                 </p>
               </div>
             </div>
@@ -213,18 +220,17 @@ const MainMap = ({
         </CalcitePanel>
       </CalciteShellPanel>
       <CalcitePanel>
-        <div id={mapViewEl}/>
+        <div id={ mapViewEl }/>
       </CalcitePanel>
       <CalciteShellPanel slot="panel-end" position="end" width-scale="l"
                          class="animate-out-down"
-                         collapsed={activeFeature == ""}>
-        <CalcitePanel heading="Feature Details" onCalcitePanelClose={() => setActiveFeature("")}
-                      closed={activeFeature == ""} closable>
+                         collapsed={ activeFeature == "" }>
+        <CalcitePanel heading="Feature Details" onCalcitePanelClose={ () => setActiveFeature("") }
+                      closed={ activeFeature == "" } closable>
           <div id="features-widget"></div>
         </CalcitePanel>
       </CalciteShellPanel>
     </CalciteShell>
-
   );
 }
 

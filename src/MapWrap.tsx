@@ -15,7 +15,7 @@ const MapWrap = ({ mapId = "", ...props } : MapProps): ReactNode => {
 
   return (
 
-    <>
+    <div className="map-wrap">
       <MainMap mapId={mapId}
                mapViewEl="mapViewEl"
                center={props.center}
@@ -25,8 +25,8 @@ const MapWrap = ({ mapId = "", ...props } : MapProps): ReactNode => {
         }}>
         </MainMap>
       {loading ?
-        <CalciteLoader id="calciteLoader" label="loading" text="Loading..."></CalciteLoader> : null}
-    </>
+        <CalciteLoader id="calciteLoader" className="calcite-loader" label="loading" text="Loading..."></CalciteLoader> : null}
+    </div>
   )
 
 }

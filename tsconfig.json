@@ -6,8 +6,9 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "lib": ["es5", "es6", "DOM", "DOM.Iterable"], // ES2020
-    "module": "ESNext",
+    "module": "esnext",
     "moduleResolution": "bundler",
+    "esModuleInterop": true,
     "noEmit": true,
     //    "types": ["node", "jest", "@testing-library/jest-dom"],
     "resolveJsonModule": true,

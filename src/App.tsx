@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <main className="App">
+      <main className="app">
         <MapWrap mapId={mapId} zoom={zoom} center={center} />
       </main>
     </>
