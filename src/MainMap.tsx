@@ -1,5 +1,4 @@
 import { type PropsWithChildren, type ReactNode, useEffect, useState } from "react";
-import { Point } from "@arcgis/core/geometry";
 import MapView from "@arcgis/core/views/MapView";
 
 import WebMap from "@arcgis/core/WebMap";
@@ -35,6 +34,7 @@ import Expand from "@arcgis/core/widgets/Expand";
 import Home from "@arcgis/core/widgets/Home";
 import Locate from "@arcgis/core/widgets/Locate";
 import Legend from "@arcgis/core/widgets/Legend";
+import { Point } from "@/parseUtils.ts";
 
 type MapProps = PropsWithChildren<{
   mapId: string

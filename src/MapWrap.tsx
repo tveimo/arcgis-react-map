@@ -1,8 +1,7 @@
 import { type PropsWithChildren, type ReactNode, useState } from "react";
-
-import { Point } from "@arcgis/core/geometry";
-import { CalciteLoader, } from "@esri/calcite-components-react";
+import { CalciteLoader } from "@esri/calcite-components-react";
 import MainMap from "./MainMap.tsx";
+import { Point } from "@/parseUtils.ts";
 
 type MapProps = PropsWithChildren<{
   mapId: string

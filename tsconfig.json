@@ -1,7 +1,26 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "allowImportingTsExtensions": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "lib": ["es5", "es6", "DOM", "DOM.Iterable"], // ES2020
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "noEmit": true,
+    //    "types": ["node", "jest", "@testing-library/jest-dom"],
+    "resolveJsonModule": true,
+    "skipLibCheck": false,
+    "strict": true,
+    "target": "ES2020",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "baseUrl": ".",
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
