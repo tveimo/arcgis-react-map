@@ -16,7 +16,7 @@
   display: flex;
 }
 
-#calcite-loader {
+.calcite-loader{
   align-self: center;
   justify-self: center;
 }
@@ -24,6 +24,7 @@
 #item-disclaimer {
   padding: 10px;
 }
+
 .esri-basemap-toggle {
   transform: scale(0.5);
   transform-origin: top left;
