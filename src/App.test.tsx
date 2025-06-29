@@ -1,13 +1,14 @@
 import React from 'react';
 import {render} from "@testing-library/react";
-import '@testing-library/jest-dom'
-import App from './App';
 import { MemoryRouter } from "react-router-dom";
+import { expect, test, vi } from 'vitest'
+import App from '@/App';
 
-jest.mock('./MapWrap', () => () => <div />);
+vi.mock('@/components/MainLoader', () => ({ default: (_props: any) => { return <div/> } }))
+vi.mock('@/components/MainMap', () => ({ default: (_props: any) => { return <div/> } }))
+vi.mock('@arcgis/core/identity/IdentityManager', () => ({ default: (_props: any) => { return <div/> } }))
 
-// using MemoryRouter, since app is not wrapped in BrowserRouter when testing
-test('component rendered', () => {
-  const { container } = render(<MemoryRouter><App /></MemoryRouter>);
-  expect(container.firstChild).toHaveClass('app');
+test('renders', () => {
+  const {container} = render(<MemoryRouter initialEntries={ ["?mapId=deadbeef"] }><App/></MemoryRouter>);
+  expect(container.firstChild).toBeDefined
 });

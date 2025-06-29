@@ -12,7 +12,6 @@ export function parsePoint(value: string | null | undefined, defaultValue: Point
   if (value && value.length > 3) {
     try {
       const values: number[] = value.split(",").map(str => parseFloat(str));
-      console.log("got values: ", values);
       if (values.length > 1) {
         return {latitude: values[0], longitude: values[1]}
       }

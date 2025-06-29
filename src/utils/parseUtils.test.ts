@@ -1,5 +1,5 @@
-import { parseNumber, parsePoint } from "./parseUtils.ts"
-import {expect, test} from '@jest/globals';
+import { parseNumber, parsePoint } from "@/utils/parseUtils"
+import { expect, test } from 'vitest'
 
 test("parseNumber", () => {
   expect(parseNumber(null, 0)).toEqual(0)
@@ -13,4 +13,7 @@ test("parseNumber", () => {
 
 test("parsePoint", () => {
   expect(parsePoint(null, null)).toEqual(null);
+  expect(parsePoint("34,122", null)).toEqual({"latitude": 34, "longitude": 122});
+  expect(parsePoint("34.23,122.12", null)).toEqual({"latitude": 34.23, "longitude": 122.12});
+  expect(parsePoint("34.32.23,124.23", null)).toEqual({"latitude": 34.32, "longitude": 124.23});
 })
