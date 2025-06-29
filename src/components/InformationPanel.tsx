@@ -21,7 +21,7 @@ const InformationPanel = (): ReactNode => {
                             icon-end="launch">San Francisco</CalciteLink>
           </p>
           <p>
-            The source code for this map is available
+            The source code for this app is available
             on <CalciteLink target="_blank"
                             href="https://github.com/tveimo/arcgis-react-map/"
                             icon-end="launch">GitHub</CalciteLink>
