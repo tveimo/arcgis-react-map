@@ -75,8 +75,6 @@ const MainMap = ({
     }
   };
 
-  console.log("mapId:", mapId);
-
   return (
     <>
       <CalciteShell content-behind>
