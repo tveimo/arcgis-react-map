@@ -1,7 +1,7 @@
 import { type PropsWithChildren, type ReactNode, useState } from "react";
 import MainMap from "@/components/MainMap.tsx";
 import { Point } from "@/utils/parseUtils";
-import { TailSpin } from "react-loader-spinner";
+import Spinner from "@/components/SimpleSpinner.tsx";
 
 type MapProps = PropsWithChildren<{
   mapId: string
@@ -24,8 +24,7 @@ const MapLoader = ({ mapId = "", ...props } : MapProps): ReactNode => {
                  setLoading(false);
                } }>
       </MainMap>
-      { loading ? <div className="map-loader"><TailSpin visible={ loading } height="80" width="80" color="#4fa94d"
-                                                        ariaLabel="loading.." radius="1"/></div> : null }
+      { loading ? (<div className="map-loader"><Spinner /></div>) : null}
     </div>
   )
 }

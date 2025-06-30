@@ -3,12 +3,6 @@ import MapLoader from "@/components/MapLoader";
 import { useSearchParams } from 'react-router-dom';
 import { Point, parseNumber, parsePoint } from "@/utils/parseUtils";
 import esriId from "@arcgis/core/identity/IdentityManager";
-import oauthInfo from "@arcgis/core/identity/OAuthInfo";
-import OAuthInfo from "@arcgis/core/identity/OAuthInfo";
-import ServerInfo from "@arcgis/core/identity/ServerInfo";
-import IdentityManagerSetProtocolErrorHandlerHandlerFunction = __esri.IdentityManagerSetProtocolErrorHandlerHandlerFunction;
-import IdentityManager from "@arcgis/core/identity/IdentityManager";
-import IdentityManagerBse from "@arcgis/core/identity/IdentityManagerBase";
 
 // https://developers.arcgis.com/calcite-design-system/get-started/
 // import { defineCustomElements } from "@esri/calcite-components/loader";
