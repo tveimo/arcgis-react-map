@@ -1,4 +1,4 @@
-import { type PropsWithChildren, type ReactNode } from "react";
+import { type PropsWithChildren, type ReactNode, useState } from "react";
 
 import "@esri/calcite-components/dist/components/calcite-action-bar";
 import "@esri/calcite-components/dist/components/calcite-shell";
@@ -63,24 +63,40 @@ const MainMap = ({
                     onReady,
                   }: MapProps): ReactNode => {
 
+  const [loading, setLoading] = useState<boolean>(true)
+
   const handleViewReady = (event: TargetedEvent<HTMLArcgisMapElement, void>) => {
     if (onReady) {
       onReady()
     }
-    if (zoom) {
-      event.target.zoom = zoom
+    setLoading(false);
+  }
+
+  const handleViewChange = (event: TargetedEvent<HTMLArcgisMapElement, void>) => {
+    try {
+      const mapElement = event.target as HTMLArcgisMapElement;
+      if (!loading && mapElement.extent) {
+        let params = new URLSearchParams(window.location.href.split("?")[1] || "");
+        if (mapElement.zoom != zoom) {
+          params.set("zoom", `${ mapElement.zoom.toFixed(0) }`);
+        }
+        params.set("center", `${ mapElement.extent.center?.latitude?.toPrecision(6) },${ mapElement.extent.center?.longitude?.toPrecision(6) }`);
+        window.history.replaceState(null, "", "?" + decodeURIComponent(params.toString()));
+      }
+    } catch (ex) {
+      console.error("unable to resolve view params", ex)
     }
-    if (center) {
-      event.target.center = new Point(center)
-    }
-  };
+  }
 
   return (
     <>
       <CalciteShell content-behind>
         <CalcitePanel>
           <ArcgisMap itemId={mapId}
-                     onArcgisViewReadyChange={handleViewReady}>
+                     zoom={zoom ? zoom : undefined}
+                     center={center ? new Point(center) : undefined}
+                     onArcgisViewReadyChange={handleViewReady}
+                     onArcgisViewChange={handleViewChange}>
               <ArcgisZoom position="top-left"/>
             <ArcgisLocate position="top-left"/>
             <ArcgisHome position="top-left"/>
@@ -103,9 +119,7 @@ const MainMap = ({
             </ArcgisExpand>
 
             <ArcgisBasemapToggle position="bottom-left" nextBasemap="topo-vector"/>
-
-            <ArcgisExpand close-on-esc position="top-right"  collapseIcon="chevrons-right" expandIcon="information"
-                          onClick={() => console.log("opening information panel")}>
+            <ArcgisExpand close-on-esc position="top-right"  collapseIcon="chevrons-right" expandIcon="information">
               <ArcgisPlacement>
                 <InformationPanel/>
               </ArcgisPlacement>
