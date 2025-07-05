@@ -3,10 +3,10 @@ Very simple react mapping app with ESRI ArcGIS Javascript SDK, using React with 
 
 Parameters can be provided to load any map that is available without login on the ArcGIS Online Portal (AGOL), eg.
 
-[USA](https://arcgis-react-map.netlify.app/?mapId=f2e9b762544945f390ca4ac3671cfa72),
-[San Francisco](https://arcgis-react-map.netlify.app/?mapId=bad7aec9c85040b882de64b8224f174c) or 
-[Paris](https://arcgis-react-map.netlify.app/?mapId=8586d9fc091f457e86e888f017685109)
-[London, Openstreet Maps](https://arcgis-react-map.netlify.app/?mapId=fae788aa91e54244b161b59725dcbb2a).
+[USA](https://tveimo.github.io/arcgis-react-map/?mapId=f2e9b762544945f390ca4ac3671cfa72),
+[San Francisco](https://tveimo.github.io/arcgis-react-map/?mapId=bad7aec9c85040b882de64b8224f174c) or 
+[Paris](https://tveimo.github.io/arcgis-react-map/?mapId=8586d9fc091f457e86e888f017685109)
+[London, Openstreet Maps](https://tveimo.github.io/arcgis-react-map/?mapId=fae788aa91e54244b161b59725dcbb2a).
 
 Many more maps can be found on the [ArcGIS Hub](https://hub.arcgis.com/search?collection=appAndMap). 
 
