@@ -17,7 +17,7 @@ const InformationPanel = (): ReactNode => {
             Any public map on the ArcGIS Online portal can be loaded by
             providing a mapId query parameter for the portal item,
             eg <CalciteLink target="_blank"
-                            href="https://arcgis-react-map.netlify.app/?mapId=f2e9b762544945f390ca4ac3671cfa72"
+                            href="https://tveimo.github.io/arcgis-react-map/?mapId=f2e9b762544945f390ca4ac3671cfa72"
                             icon-end="launch">San Francisco</CalciteLink>
           </p>
           <p>
